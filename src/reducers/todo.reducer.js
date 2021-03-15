@@ -1,4 +1,4 @@
-const todos = (state = [{ id: 1 }], action) => {
+const todos = (state = [], action) => {
     switch (action.type) {
         case "ADD_TODO":
             return [
@@ -9,6 +9,16 @@ const todos = (state = [{ id: 1 }], action) => {
                     text: action.text,
                 },
             ];
+        case "TOGGLE_TODO":
+            return state.map((todo) => {
+                const isToggledTodo = todo.id === action.id;
+
+                return {
+                    ...todo,
+                    complete: isToggledTodo ? !todo.complete : todo.complete,
+                };
+            });
+
         default:
             return state;
     }
