@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
+import TodoList from "./containers/toDoList";
+import AddTodo from "./containers/addTodo";
 
-const Button = styled.button`
+export const Button = styled.button`
     background: ${(props) =>
         props.secondary
             ? props.theme.colors.secondary
@@ -37,6 +39,8 @@ export default function App() {
             <Button>Styled Component</Button>
             <Button secondary>Styled Component: Secondary</Button>
             <InlineButton>Inline Button</InlineButton>
+            <AddTodo />
+            <TodoList />
         </ThemeProvider>
     );
 }
