@@ -2,6 +2,7 @@ import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import TodoList from "./containers/toDoList";
 import AddTodo from "./containers/addTodo";
+import Footer from "./containers/Footer";
 
 export const Button = styled.button`
     background: ${(props) =>
@@ -18,6 +19,9 @@ export const Button = styled.button`
 
     &:hover {
         transform: scale(1.1);
+    }
+    &:disabled {
+        background: grey;
     }
 `;
 
@@ -41,6 +45,7 @@ export default function App() {
             <InlineButton>Inline Button</InlineButton>
             <AddTodo />
             <TodoList />
+            <Footer />
         </ThemeProvider>
     );
 }
